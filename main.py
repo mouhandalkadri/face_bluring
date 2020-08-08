@@ -24,8 +24,6 @@ ap.add_argument("-a", "--ask", type=bool, default=False,
                 help="ask about the face before blur")
 ap.add_argument("-o", "--output", default=DEFAULT_OUTPUT_PATH,
                 help="ask about the face before blur")
-ap.add_argument("-l", "--logo", default=None,
-                help="path to the logo if not provided no logo will be added")
 args = vars(ap.parse_args())
 
 
@@ -37,7 +35,7 @@ CONFIDENCE = args["sensitivity"]
 ASK = args["ask"]
 OUTPUT_PATH = args["output"]
 if not os.path.exists(OUTPUT_PATH):
-    print(f"{OUTPUT_PATH} Invalid Output Path the output redirectd to {DEFAULT_OUTPUT_PATH}")
+    print(f"{OUTPUT_PATH} Invalid Output Path the output redirectd to {DEFAULT_OUTPUT_PATH}")   
     OUTPUT_PATH = DEFAULT_OUTPUT_PATH
     os.mkdir("output")
 
