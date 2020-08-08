@@ -36,10 +36,10 @@ IMAGES_PATH = args["images"]
 CONFIDENCE = args["sensitivity"]
 ASK = args["ask"]
 OUTPUT_PATH = args["output"]
-if not os.path.exists(OUTPUT_PATH) and OUTPUT_PATH == DEFAULT_OUTPUT_PATH:
+if not os.path.exists(OUTPUT_PATH):
+    print(f"{OUTPUT_PATH} Invalid Output Path the output redirectd to {DEFAULT_OUTPUT_PATH}")
+    OUTPUT_PATH = DEFAULT_OUTPUT_PATH
     os.mkdir("output")
-else:
-    raise Exception("Invalid Output Path")
 
 KSIZE = (23, 23)
 SIGMAY = SIGMAX = 60
